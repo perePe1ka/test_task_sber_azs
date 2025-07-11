@@ -1,0 +1,30 @@
+-- SELECT COUNT(*) as stations_count FROM stations;
+-- SELECT COUNT(*) as dispensers_count FROM fuel_dispensers;
+-- SELECT COUNT(*) as prices_count FROM prices;
+--
+-- \d stations;
+-- \d fuel_dispensers;
+-- \d prices;
+--
+-- -- Проверка данных ТРК с ценами
+-- SELECT
+--     fd.external_id,
+--     fd.fuel_type,
+--     fd.current_price,
+--     s.name as station_name
+-- FROM fuel_dispensers fd
+-- JOIN stations s ON fd.station_id = s.id
+-- LIMIT 10;
+--
+-- -- Проверка есть ли цены в истории
+-- SELECT
+--     p.price,
+--     p.created_at,
+--     fd.external_id as dispenser_id,
+--     fd.fuel_type,
+--     s.name as station_name
+-- FROM prices p
+-- JOIN fuel_dispensers fd ON p.fuel_dispenser_id = fd.id
+-- JOIN stations s ON fd.station_id = s.id
+-- ORDER BY p.created_at DESC
+-- LIMIT 10;

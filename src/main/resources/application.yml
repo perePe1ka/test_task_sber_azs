@@ -1,0 +1,22 @@
+database:
+  url: jdbc:postgresql://localhost:5432/test_azs
+  username: postgres
+  password: 1234
+  driver: org.postgresql.Driver
+
+hibernate:
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  hbm2ddl:
+    auto: update
+  show_sql: false
+  format_sql: true
+
+api:
+  fuelup:
+    base_url: https://aggregator.api.test.fuelup.ru/v2
+    api_key: uwvgx6sx47bednyy7lo6ghq56jbw8wpb
+
+logging:
+  level:
+    com.fuelup.azs: INFO
+    org.hibernate.SQL: DEBUG
