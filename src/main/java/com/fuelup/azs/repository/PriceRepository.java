@@ -35,17 +35,7 @@ public class PriceRepository {
             throw e;
         }
     }
-    
-    public List<Price> findByFuelDispenser(FuelDispenser fuelDispenser) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Price WHERE fuelDispenser = :fuelDispenser ORDER BY createdAt DESC", Price.class)
-                    .setParameter("fuelDispenser", fuelDispenser)
-                    .list();
-        } catch (Exception e) {
-            logger.error("Ошибка получения цен для ТРК: {}", fuelDispenser.getExternalId(), e);
-            throw e;
-        }
-    }
+
     
     public List<Price> findAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
