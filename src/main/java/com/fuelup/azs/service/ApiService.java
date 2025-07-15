@@ -28,11 +28,6 @@ public class ApiService {
         return makeRequest(url);
     }
     
-    public String getPricesData() throws IOException {
-        String url = baseUrl + "/price?apikey=" + apiKey;
-        return makeRequest(url);
-    }
-    
     private String makeRequest(String url) throws IOException {
         logger.debug("Выполняется запрос к API: {}", url);
         

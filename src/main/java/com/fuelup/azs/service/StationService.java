@@ -6,5 +6,4 @@ import java.util.List;
 public interface StationService {
     void loadAndSaveStations();
     List<Station> getAllStations();
-    List<Station> getActiveStations();
 }

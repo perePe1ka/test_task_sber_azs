@@ -36,19 +36,10 @@ public class PriceServiceImpl implements PriceService {
         this.objectMapper = new ObjectMapper();
     }
     
-    @Override
-    public void loadAndSavePrices() {
-        logger.info("Цены загружаются вместе со станциями. Используйте загрузку станций для получения актуальных цен.");
-    }
-    
     
     @Override
     public List<Price> getAllPrices() {
         return priceRepository.findAll();
     }
-    
-    @Override
-    public List<Price> getPricesByFuelDispenser(FuelDispenser fuelDispenser) {
-        return priceRepository.findByFuelDispenser(fuelDispenser);
-    }
+
 }

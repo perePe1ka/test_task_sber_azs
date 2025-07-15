@@ -50,13 +50,4 @@ public class StationRepository {
             throw e;
         }
     }
-    
-    public List<Station> findActiveStations() {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM Station WHERE enable = true", Station.class).list();
-        } catch (Exception e) {
-            logger.error("Ошибка получения активных станций", e);
-            throw e;
-        }
-    }
 }

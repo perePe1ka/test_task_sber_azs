@@ -46,17 +46,6 @@ public class FuelDispenserRepository {
         }
     }
     
-    public List<FuelDispenser> findByStation(Station station) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            return session.createQuery("FROM FuelDispenser WHERE station = :station", FuelDispenser.class)
-                    .setParameter("station", station)
-                    .list();
-        } catch (Exception e) {
-            logger.error("Ошибка получения ТРК для станции: {}", station.getExternalId(), e);
-            throw e;
-        }
-    }
-    
     public List<FuelDispenser> findAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             return session.createQuery("FROM FuelDispenser fd JOIN FETCH fd.station", FuelDispenser.class).list();

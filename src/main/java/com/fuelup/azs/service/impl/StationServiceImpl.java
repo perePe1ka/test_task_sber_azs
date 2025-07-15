@@ -174,8 +174,4 @@ public class StationServiceImpl implements StationService {
         return stationRepo.findAll();
     }
 
-    @Override
-    public List<Station> getActiveStations() {
-        return stationRepo.findActiveStations();
-    }
 }
